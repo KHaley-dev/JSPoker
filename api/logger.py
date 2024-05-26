@@ -3,7 +3,9 @@ import json
 from colorama import Fore, Style, init
 import os
 import unicodedata
+from dotenv import load_dotenv
 
+load_dotenv()
 init(autoreset=True)
 
 BOLD_ON = "\033[1m"
@@ -17,10 +19,15 @@ class LogLevels:
 
 loggers = {}
 
+try:
+    level = getattr(LogLevels, os.environ.get("LOG_LEVEL"))
+except:
+    level = LogLevels.INFO 
+
 config = {
     "longest_cls_len": 0,
     "logging-dir": os.environ.get("LOGGING_PATH", "logs"),
-    "logging_level": LogLevels.INFO,
+    "logging_level": level,
     "optimal_leng": 30
 }
 

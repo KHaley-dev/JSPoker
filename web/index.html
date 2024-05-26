@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Poker: Home</title>
+    <meta charset="utf-8" />
+    <link href="./assets/styles.css" rel="stylesheet" />
+    <link href="./assets/poker-chip.png" rel="icon" />
+</head>
+<body>
+    <div class="main-container flex-center">
+        <h1>JS Poker</h1> <br>
+        <p>Play poker for free, without any real money!</p><br>
+        <div class="form-container">
+            <form action="room" method="post" class="flex-center">
+                <input type="text" placeholder="Username" id="username" name="username" class="textfield" required />
+                <input type="text" placeholder="Room code" id="roomcode" name="roomcode" class="textfield" required />
+                <input type="submit" name="play" class="play-button classic-button" value="Play!" />
+                <input type="submit" name="create-game" class="create-game classic-button" value="Create room" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
