@@ -31,3 +31,6 @@ db = mysql.connector.connect(
 main_logger.info(f"Connected to database {DB_HOST}:{DB_NAME} (user: {DB_USER})")
 cursor = db.cursor()
 
+create_session_table = "CREATE TABLE IF NOT EXISTS <sessionID> (name VARCHAR())"
+
+
