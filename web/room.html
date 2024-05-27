@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Poker: Room</title>
+    <meta charset="utf-8" />
+    <link href="./../assets/styles.css" rel="stylesheet" />
+    <link href="./../assets/poker-chip.png" rel="icon" />
+</head>
+<body>
+    <div class="gameroom-container">
+        <div class="translucent info-box">
+            <h1>Room information</h1>
+            <div id="room-info"></div>    
+            <div id="username"></div>
+        </div>
+
+        <div class="translucent game-box">
+            <h1>Game settings</h1>
+            no settings for now!
+        </div>
+    </div>
+
+    <script>
+        const path = window.location.pathname;
+        const roomId = path.split('/').pop();
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const username = params.get('username');
+
+        document.getElementById('room-info').innerText = `Room ID: ${roomId}`;
+        document.getElementById('username').innerText = `Username: ${username}`;
+    </script>
+</body>
+</html>

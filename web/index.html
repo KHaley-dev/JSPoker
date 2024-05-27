@@ -9,17 +9,25 @@
     <link href="./assets/poker-chip.png" rel="icon" />
 </head>
 <body>
-    <div class="main-container flex-center">
+    <div class="main-container flex-center translucent">
         <h1>JS Poker</h1> <br>
         <p>Play poker for free, without any real money!</p><br>
         <div class="form-container">
-            <form action="room" method="post" class="flex-center">
+            <form id="join-game-room">
                 <input type="text" placeholder="Username" id="username" name="username" class="textfield" required />
-                <input type="text" placeholder="Room code" id="roomcode" name="roomcode" class="textfield" required />
-                <input type="submit" name="play" class="play-button classic-button" value="Play!" />
-                <input type="submit" name="create-game" class="create-game classic-button" value="Create room" />
+                <input type="text" placeholder="8-digit Room code" id="roomcode" name="roomcode" class="textfield" required />
+                <button type="submit" name="play" class="play-button classic-button">Join game!</button>
+            </form>
+            <div class="divider">
+                <span>or create your own room!</span>
+            </div>
+            <form id="create-private-room">
+                <input type="text" placeholder="Username" id="username" name="username" class="textfield" required />
+                <button type="submit" name="create-game" class="create-game classic-button">Create private room</button>
             </form>
         </div>
     </div>
+
+    <script src="./assets/mainPage.js" defer></script>
 </body>
 </html>

@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
 
+/* variables */ 
+:root {
+    --main-dark: #2e3033;
+    --darker: #1d2022;
+    --translucent: rgba(34, 35, 37, 0.5);
+    --blue: #42aaf5;
+    --green: #17b353;
+}
+
 * {
     font-family: "Roboto", sans-serif;
+    color: white;
 }
 
 body {
-    background: #2e3033 url("./background.jpg") no-repeat fixed;
+    background: var(--main-dark) url("./background.jpg") no-repeat fixed;
     background-size: 100vw 100vh;
     height: 1vh;
     width: 1vw;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .flex-center {
@@ -24,23 +36,27 @@ body {
     flex-direction: row;
 }
 
-.main-container {
-    color: white;
-    width: 800px;
-    height: 500px;
-    background-color: rgba(46, 48, 51, 0.5);
+.translucent {
+    background-color: var(--translucent);
     backdrop-filter: blur(10px);
+}
+
+.main-container {
+    width: 800px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 25px;
+    padding: 40px 0;
+    height: auto;
 }
 
 .main-container h1 {
     font-weight: bold;
     font-size: 60px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .classic-button {
@@ -49,8 +65,9 @@ body {
     padding: 15px;
     font-size: 30px;
     transition: background-color 0.2s ease-in-out;
-    color: white;
-    background-color: #1d2022;
+    transition: box-shadow 0.2s ease-in-out;
+    background-color: var(--darker);
+    cursor: pointer;
 }
 
 .main-container .form-container {
@@ -63,8 +80,9 @@ body {
 }
 
 .main-container .create-game:hover {
-    color: #1d2022;
-    background-color: #42aaf5;
+    color: var(--darker);
+    background-color: var(--blue);
+    box-shadow: white 10px 10px;
 }
 
 .main-container .play-button {
@@ -73,8 +91,9 @@ body {
 }
 
 .main-container .play-button:hover {
-    color: #1d2022;
-    background-color: #17b353;
+    color: var(--darker);
+    background-color: var(--green);
+    box-shadow: white 10px 10px;
 }
 
 .main-container .textfield {
@@ -84,11 +103,67 @@ body {
     background: none;
     border: none;
     color: white;
-    border-bottom: 5px solid #1d2022;
-    animation: border-bottom-color 0.2s ease-in;
+    border-bottom: 5px solid var(--darker);
+    transition: border-bottom-color 0.2s ease-in-out;
 }
 
 .main-container .textfield:focus {
     outline: none;
     border-bottom-color: white;
+}
+
+.divider {
+    margin: 20px 0 15px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.5em;
+}
+
+.divider span {
+    white-space: nowrap;
+    color: white;
+    font-size: 1.5em;
+}
+
+.gameroom-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.info-box {
+    margin: 0;
+    padding: 20px 50px;
+    height: 90%;
+    width: 25%;
+    border-radius: 25px;
+}
+
+.game-box {
+    margin: 0;
+    width: 60%;
+    border-radius: 25px;
+    height: 90%;
+    padding: 20px 50px;
 }
